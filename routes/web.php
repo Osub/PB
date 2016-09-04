@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/build/{channel}', function ($channel) {
+    return view('build',['channel'=>$channel]);
+});

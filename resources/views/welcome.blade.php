@@ -75,15 +75,19 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Personal Brand
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="build/anti-cheat-guide">防骗指南</a>
+                    <a href="build/docs">文档</a>
+                    <a href="build/introduction">介绍</a>
+                    <a href="build/value">价值观</a>
+                    <a href="build/post">日志</a>
+                    <a href="build/read">阅读</a>
+                    <a href="build/recommend">推荐</a>
+                    <a href="build/contact">人脉</a>
+                    <a href="https://github.com/osub/PB">GitHub</a>
                 </div>
             </div>
         </div>
