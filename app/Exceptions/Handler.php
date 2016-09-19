@@ -22,6 +22,8 @@ class Handler extends ExceptionHandler
         \Illuminate\Validation\ValidationException::class,
     ];
 
+
+
     /**
      * Report or log an exception.
      *
@@ -44,6 +46,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($exception instanceof \Rinvex\Fort\Exceptions\InvalidPersistenceException) {
+            return intend([
+                'intended'   => route('rinvex.fort.frontend.auth.login'),
+                'withErrors' => ['rinvex.fort.session.expired' => Lang::get('rinvex.fort::message.auth.session.expired')],
+            ], 401);
+        }
         return parent::render($request, $exception);
     }
 
@@ -56,10 +64,14 @@ class Handler extends ExceptionHandler
      */
     protected function unauthenticated($request, AuthenticationException $exception)
     {
-        if ($request->expectsJson()) {
-            return response()->json(['error' => 'Unauthenticated.'], 401);
-        }
-
-        return redirect()->guest('login');
+//        if ($request->expectsJson()) {
+//            return response()->json(['error' => 'Unauthenticated.'], 401);
+//        }
+//
+//        return redirect()->guest('login');
+        return intend([
+            'intended'   => route('rinvex.fort.frontend.auth.login'),
+            'withErrors' => ['rinvex.fort.session.required' => Lang::get('rinvex.fort::message.auth.session.required')],
+        ], 401);
     }
 }
