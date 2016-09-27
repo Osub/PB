@@ -178,7 +178,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
-        Rinvex\Fort\Providers\FortServiceProvider::class,
+        //Rinvex\Fort\Providers\FortServiceProvider::class,
 
     ],
 

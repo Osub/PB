@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('/build/{channel}', function ($channel) {
     return view('build',['channel'=>$channel]);
 });
+
+Route::get('test','IncreadeController@index');
